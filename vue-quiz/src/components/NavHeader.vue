@@ -6,7 +6,7 @@
     <div class="flex items-center justify-between full-width">
       <p class="text-18 text-242526 font-weight-600">VUE-QUIZ</p>
       <div>
-        <p class="text-242526">Time to answer: <span class="text-6A6969">{{countdownObj.m + ' minutes : '+countdownObj.s+' seconds'}}</span></p>
+        <p v-if="quizStore.startTest && !quizStore.quizCompleted" class="text-242526">Time to answer: <span class="text-6A6969">{{countdownObj.m + ' minutes : '+countdownObj.s+' seconds'}}</span></p>
       </div>
     </div>
   </q-header>
@@ -38,14 +38,26 @@ watch(
 watch(
   () => quizStore.showQuestion,
   (newValue) => {
+    updateTotalTime();
     setCountdown(count.value)
   }
 );
+watch(
+  () => quizStore.quizCompleted,
+  (newValue) => {
+    updateTotalTime();
+  }
+);
+function updateTotalTime(){
+  quizStore.totalTime = quizStore.totalTime + count.value - ((parseInt(countdownObj.value.m) *60) + parseInt(countdownObj.value.s))
+  console.log('time' + quizStore.totalTime )
+}
 onFinish(() => {
+  updateTotalTime();
   if(quizStore.showQuestion < quizStore.questionsList.length-1){
     quizStore.showQuestion++;
     quizStore.failedToAnswer = true;
-    setCountdown(count.value)
+    setCountdown(count.value);
   }else{
     quizStore.quizCompleted = true;
   }

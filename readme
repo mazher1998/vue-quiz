@@ -1,0 +1,15 @@
+steps to run me 
+1)git clone https://github.com/mazher1998/vue-quiz.git
+2)cd vue-quiz
+3)cd vue-quiz
+4)npm install
+5)quasar dev
+Now you can see the project running on http://localhost:8080/ or 
+
+What I have used in this project 
+1)Vue 3(composition API)
+2)typescript
+3)Pinia store(state managment)
+4)es lint
+5)webpack
+6)Quasar

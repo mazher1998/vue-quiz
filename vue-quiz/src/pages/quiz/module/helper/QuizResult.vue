@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import {store} from 'src/stores/index'
 import {QuizStore} from 'pages/quiz/QuizStore';
-import {onMounted,ref} from "vue";
+import {onMounted,ref} from 'vue';
 const quizStore = QuizStore(store)
 function getSummary(){
   if(quizStore.marksObtained<5){

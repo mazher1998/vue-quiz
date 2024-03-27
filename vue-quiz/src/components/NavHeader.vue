@@ -37,14 +37,14 @@ watch(
 );
 watch(
   () => quizStore.showQuestion,
-  (newValue) => {
+  () => {
     updateTotalTime();
     setCountdown(count.value)
   }
 );
 watch(
   () => quizStore.quizCompleted,
-  (newValue) => {
+  () => {
     updateTotalTime();
   }
 );

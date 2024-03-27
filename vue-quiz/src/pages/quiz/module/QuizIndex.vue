@@ -12,10 +12,10 @@
 <script setup lang="ts">
 import {store} from 'src/stores/index'
 import {QuizStore} from 'pages/quiz/QuizStore';
-import QuizForm from "pages/quiz/module/helper/QuizForm.vue";
-import QuizInto from "pages/quiz/module/helper/QuizInto.vue";
-import QuizQuestions from "pages/quiz/module/helper/QuizQuestions.vue";
-import QuizResult from "pages/quiz/module/helper/QuizResult.vue";
+import QuizForm from 'pages/quiz/module/helper/QuizForm.vue';
+import QuizInto from 'pages/quiz/module/helper/QuizInto.vue';
+import QuizQuestions from 'pages/quiz/module/helper/QuizQuestions.vue';
+import QuizResult from 'pages/quiz/module/helper/QuizResult.vue';
 const quizStore = QuizStore(store)
 </script>
 <style>

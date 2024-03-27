@@ -1,8 +1,7 @@
 <template>
   <div class="border-radius-8 full-width q-pa-md box-shadow-1 border-color-F1F1F1">
-    <p>Question: {{ quizStore.showQuestion + 1 }}/{{ quizStore.questionsList.length }}</p>
-    <p>{{quizStore.questionsList[quizStore.showQuestion]?.question}}</p>
-    <p>Options</p>
+    <p class="q-mb-sm font-weight-600 text-18">Question: {{ quizStore.showQuestion + 1 }} / {{ quizStore.questionsList.length }}</p>
+    <p class="font-weight-500 text-16">{{quizStore.questionsList[quizStore.showQuestion]?.question}}</p>
     <div v-for="(option, index) in quizStore.questionsList[quizStore.showQuestion]?.options" :key="index+'options'">
       <q-radio  v-model="answer" :val="index" :label="option" />
     </div>

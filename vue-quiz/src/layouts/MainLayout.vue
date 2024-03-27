@@ -7,5 +7,5 @@
   </q-layout>
 </template>
 <script setup lang="ts">
-import NavHeader from "components/NavHeader.vue";
+import NavHeader from 'components/NavHeader.vue';
 </script>
